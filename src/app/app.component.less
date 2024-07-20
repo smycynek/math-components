@@ -1,0 +1,26 @@
+div {
+    margin: 10px;
+}
+
+.cell {
+    display:flex;
+    width:200px;
+    height:200px;
+    background-color: lightgreen;
+    align-items: center;
+    vertical-align: middle;
+    align-self: center;
+    align-content: center;
+    margin: auto;
+}
+
+:host ::ng-deep * {
+    font-family: sans-serif;
+}
+
+:host ::ng-deep mfrac {
+    mn {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+}

@@ -1,0 +1,34 @@
+
+<math>
+    <mrow>
+        <mn>{{left}}</mn>
+        <mo>&times;</mo>
+        <mn>{{right}}</mn>
+
+        @if (showRval) {
+            @if (displayOp) {
+                <mo>
+                    {{displayOp}}
+                </mo>
+            }
+            @else {
+                <mo>
+                    =
+                </mo>
+            }
+            @if (displayRval) {
+                <mn>
+                    {{displayRval | number}}
+                </mn>
+            }
+            @else {
+                <mn>
+                    {{value | number}}
+                </mn>
+            }
+        
+        }
+
+    </mrow>
+
+</math>
