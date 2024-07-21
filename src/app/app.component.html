@@ -1,12 +1,18 @@
 <div>
     <h1>Math component test</h1>
 
+    <a href="https://github.com/smycynek/math-components">https://github.com/smycynek/math-components</a>
+
+
     <p>I'd like a system to render various math expressions as well as simple equalities and inequalities.</p>
     <p>MathML can do this, but if I want all my expressions to be data-driven, it helps to have some Angular
-        components to organize what is rendered.
-        </p>
+        components to organize what is rendered.  I thought about using MathJAX or other packages, but many do not
+        work well with newer versions of angular, and I still need to dynamically generate the input data (LaTeX),
+        so using those libraries seemed like a lot of overhead to exchange one problem for another.
+    </p>
 
-    <p>With the set of components in this project, we can display various expression types (fractions, whole numbers, roots
+    <p>With the set of components in this project, we can display various expression types (fractions, whole numbers,
+        roots
         addition, subtraction, multiplication, division, exponents).
     </p>
     <p>
@@ -28,7 +34,7 @@
     </p>
     <div>
         <span>{{preamble}}</span>
-        <math-exp [mathData]="getSampleRootWithOverriddenValue()"/>
+        <math-exp [mathData]="getSampleRootWithOverriddenValue()" />
         <span>{{postamble}}</span>
     </div>
 
@@ -99,7 +105,7 @@
 
         <div *ngFor="let rdata of getMixedNumDataRow(); index as i">
             <div class="col cell">
-                <math-exp [mathData]="rdata"/>
+                <math-exp [mathData]="rdata" />
             </div>
         </div>
 
