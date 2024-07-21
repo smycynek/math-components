@@ -36,7 +36,10 @@ to a component (ideally a strongly typed Typescript object, but a generic object
 and have that component choose the correct angular template and logic to display it.  This might be about as good
 as we can get, but if there is something more direct with less code or overhead, that would be great.
 
-4) For some reason, building with optimization on causes issues rendering math.  Currently investigating.
+4) I tried to save some code duplication by putting some common template code into a separate template,
+see `r-value` and `prefixOp`, but it required me making several different `<math>` elements and made items spacing difficult, so went back to a single component with one template.
+
+5) For some reason, building with optimization on causes issues rendering math.  Currently investigating.
 
 # Live demo
 

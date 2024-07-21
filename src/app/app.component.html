@@ -4,9 +4,9 @@
     <a href="https://github.com/smycynek/math-components">https://github.com/smycynek/math-components</a>
 
 
-    <p>I'd like a system to render various math expressions as well as simple equalities and inequalities.</p>
+    <p>I'd like a system to render various math expressions, their calculated values, and simple equalities and inequalities</p>
     <p>MathML can do this, but if I want all my expressions to be data-driven, it helps to have some Angular
-        components to organize what is rendered.  I thought about using MathJAX or other packages, but many do not
+        components to organize what is rendered. I thought about using MathJAX or other packages, but many do not
         work well with newer versions of angular, and I still need to dynamically generate the input data (LaTeX),
         so using those libraries seemed like a lot of overhead to exchange one problem for another.
     </p>
@@ -16,7 +16,7 @@
         addition, subtraction, multiplication, division, exponents).
     </p>
     <p>
-        Here's a root expression:
+        Here's a root expression
     </p>
     <p>
         <math-exp [mathData]="getSampleRoot()"></math-exp>
@@ -89,11 +89,55 @@
 
     </details>
 
+
+    <details>
+        <summary>More sentences</summary>
+        <div class="math-sentence">
+            <span class="math-text">Find all fractions equivalent to</span>
+            <math-exp [mathData]="newMixedNumber(null,0,1,3)" />
+        </div>
+
+        <div class="math-sentence">
+            <span class="math-text">Find all values greater than</span>
+            <math-exp [mathData]="newMixedNumber(null,5,0,0)" />
+        </div>
+
+        <div class="math-sentence">
+            <span class="math-text">Find all numbers between</span>
+            <math-exp [mathData]="newMixedNumber(null,-10,0,0)" /> <span class="math-text">and</span>
+            <math-exp [mathData]="newMixedNumber(null,10,0,0)" />
+        </div>
+
+
+        <div class="math-sentence">
+            <span class="math-text">True or False?</span>
+            <math-exp [mathData]="NewDiv(null,10,2,true, '>', 3)" />
+        </div>
+
+
+        <div class="math-sentence">
+            <span class="math-text">Find all numbers</span>
+            <math-exp [mathData]="newMixedNumber('>',10,0,0)" />
+        </div>
+
+        
+        <div class="correct math-sentence">
+            <span class="math-text">Correct!</span>
+            <math-exp [mathData]="newExponent(null,5,2,true)" />
+        </div>
+
+        <div class="incorrect math-sentence">
+            <span class="math-text">Incorrect.</span>
+            <math-exp [mathData]="newRoot(null,1,3,8, true,'!=', 4)" />
+        </div>
+
+    </details>
+
     <details>
         <summary>Other</summary>
         <p>Generic container with expression data declared explicitly</p>
         <math-exp
-            [mathData]="{opType: '_RootData', coefficient: 4, index: 3, radicand: 8, value: 8, showRval: true, displayOp: '&ne;', displayRval:99}" />
+            [mathData]="{opType: '_RootData', prefixOp: null, coefficient: 4, index: 3, radicand: 8, value: 8, showRval: true, displayOp: '&ne;', displayRval:99}" />
         <p>Root component declared explicitly</p>
         <app-mroot coefficient="4" index="3" radicand="8" value="8" [showRval]=true displayOp="&ne;" [displayRval]="99">
         </app-mroot>

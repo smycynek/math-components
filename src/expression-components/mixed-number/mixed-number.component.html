@@ -3,6 +3,9 @@
 -->
 <math>
     <mrow>
+        @if (prefixOp) {
+            <mo>{{prefixOp}}</mo>
+            }
         <mn *ngIf="(whole !== 0)">
             {{whole | number}}
         </mn>
@@ -10,5 +13,29 @@
             <mn>{{numerator}}</mn>
             <mn>{{denominator}}</mn>
         </mfrac>
+        @if (showRval) {
+            @if (displayOp) {
+            <mo>
+                {{displayOp}}
+            </mo>
+            }
+            @else {
+            <mo>
+                =
+            </mo>
+            }
+
+
+            @if (displayRval) {
+            <mn>
+                {{displayRval}}
+            </mn>
+            }
+            @else {
+            <mn>
+                {{value}}
+            </mn>
+            }
+        }
     </mrow>
 </math>
