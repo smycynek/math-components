@@ -1,7 +1,6 @@
 <!--
 <p>Mixed-number</p>
 -->
-
 <math>
     <mrow>
         <mn *ngIf="(whole !== 0)">
@@ -11,30 +10,5 @@
             <mn>{{numerator}}</mn>
             <mn>{{denominator}}</mn>
         </mfrac>
-        
-
-        @if (showRval) {
-            @if (displayOp) {
-                <mo>
-                    {{displayOp}}
-                </mo>
-            }
-            @else {
-                <mo>
-                    =
-                </mo>
-            }
-            @if (displayRval) {
-                <mn>
-                    {{displayRval | number}}
-                </mn>
-            }
-            @else {
-                <mn>
-                    {{value | number}}
-                </mn>
-            }
-        
-        }
     </mrow>
 </math>

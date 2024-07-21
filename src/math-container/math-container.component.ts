@@ -9,11 +9,12 @@ import { MultiplicationOperationComponent } from '../expression-components/multi
 import { DivisionOperationComponent } from '../expression-components/division-operation/division-operation.component';
 import { ExponentOperationComponent } from '../expression-components/exponent-operation/exponent-operation.component';
 import { AddOpData, SubOpData, MultOpData, DivOpData, ExpOpData, RootData } from '../expression-data/expressionData';
+import { RValueComponent } from '../expression-components/r-value/r-value.component';
 
 @Component({
   selector: 'math-exp',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RValueComponent],
   templateUrl: './math-container.component.html',
   styleUrl: './math-container.component.less'
 })

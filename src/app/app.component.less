@@ -2,16 +2,24 @@ div {
     margin: 10px;
 }
 
+.cell-container {
+    display: flex;
+    flex-direction: row;
+}
 .cell {
-    display:flex;
-    width:200px;
-    height:200px;
-    background-color: lightgreen;
+    margin: 2px;
+    width: 120px;
+    height: 90px;
     align-items: center;
-    vertical-align: middle;
-    align-self: center;
     align-content: center;
-    margin: auto;
+    vertical-align: center;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    font-size: x-large;
+    background-color: lightgrey;
+    padding: 0px;
+    border-radius: 5px;
 }
 
 :host ::ng-deep * {

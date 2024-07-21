@@ -8,11 +8,12 @@ import { RootComponent } from '../expression-components/root/root.component';
 import { MathContainerComponent } from '../math-container/math-container.component';
 import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData } from '../expression-data/expressionData';
 import { OP_NE } from '../expression-data/operators';
+import { RValueComponent } from '../expression-components/r-value/r-value.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MathContainerComponent, CommonModule, RouterOutlet, ExpressionComponent, MixedNumberComponent, RootComponent],
+  imports: [MathContainerComponent, CommonModule, RouterOutlet, ExpressionComponent, MixedNumberComponent, RootComponent, RValueComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less'
 })
