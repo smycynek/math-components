@@ -1,6 +1,8 @@
 # MathComponents
 
-Workflow:
+# Work in Progress
+
+# Workflow:
 
 To create a new operation type;
 
@@ -14,14 +16,18 @@ To create a new operation type;
 `math-exp`, e.g.
  `<math-exp [mathData]="your data here" />`
 
-Questions:
+Note: the expression rendered is split across two components that take the same inputs, MathContainerComponent and
+RValueComponent.  This is to avoid duplicating the r-value template code in each math component.
 
-1)  Can I workaround the use of `any` in 
+# Questions/TODO
+
+1)  Can I workaround the use of `any` here?
 ```
 export class MathContainerComponent {
   @Input() expressionData!: any;
 ```
-?  I don't know enough about how @Input() and angular mappings using attributes and transforms work to say.
+
+I don't know enough about how @Input() and angular mappings using attributes and transforms work to say.
 
 2)  Can I create a better way (a class factory) to choose the component to render?
 
@@ -30,5 +36,9 @@ to a component (ideally a strongly typed Typescript object, but a generic object
 and have that component choose the correct angular template and logic to display it.  This might be about as good
 as we can get, but if there is something more direct with less code or overhead, that would be great.
 
+4) For some reason, building with optimization on causes issues rendering math.  Currently investigating.
 
+# Live demo
+
+https://stevenvictor.net/math-components/
 
