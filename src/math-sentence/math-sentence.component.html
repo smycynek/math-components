@@ -1,0 +1,12 @@
+<div class="math-sentence">
+    <span *ngFor="let dataSegment of dataArray;">
+        @if (isString(dataSegment)) {
+        <span class="math-text">
+            {{dataSegment}}
+        </span>
+        }
+        @else {
+        <math-exp [mathData]="dataSegment"></math-exp>
+        }
+    </span>
+</div>

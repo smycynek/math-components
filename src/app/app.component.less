@@ -6,6 +6,7 @@ div {
     display: flex;
     flex-direction: row;
 }
+
 .cell {
     margin: 2px;
     width: 120px;
@@ -22,8 +23,21 @@ div {
     border-radius: 5px;
 }
 
-:host ::ng-deep * {
+:host ::ng-deep span * {
+    padding: 0px;
+    margin: 0px;
+}
+
+:host ::ng-deep math-exp * {
+    padding: 0px;
+    margin: 0px;
+}
+
+:host ::ng-deep *  {
+    &:not(code) { 
     font-family: sans-serif;
+    }
+
 }
 
 :host ::ng-deep mfrac {
@@ -32,21 +46,43 @@ div {
         padding-bottom: 3px;
     }
 }
-.math-text {
-        margin-left: 4px;
-        margin-right: 4px;
-    }
 
-.correct {
-    font-weight: bold;
-    color: green;
+.math-text-r {
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
-.incorrect {
+:host ::ng-deep .correct {
+    font-weight: bold;
+    color: green;
+
+    math,
+    math[mode="inline"] {
+        font-weight: bold;
+    }
+
+    math[mode="display"] {
+        font-weight: bold;
+    }
+
+}
+
+:host ::ng-deep .incorrect {
     font-weight: bold;
     color: red;
+
+    math,
+    math[mode="inline"] {
+        font-weight: bold;
+    }
+
+    math[mode="display"] {
+        font-weight: bold;
+    }
 }
 
 .math-sentence {
-    height:50px;
+    height: 50px;
 }
+
+math-exp {}
