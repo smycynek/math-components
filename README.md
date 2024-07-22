@@ -16,9 +16,6 @@ To create a new operation type;
 `math-exp`, e.g.
  `<math-exp [mathData]="your data here" />`
 
-Note: the expression rendered is split across two components that take the same inputs, MathContainerComponent and
-RValueComponent.  This is to avoid duplicating the r-value template code in each math component.
-
 # Questions/TODO
 
 1)  Can I workaround the use of `any` here?
@@ -40,6 +37,8 @@ as we can get, but if there is something more direct with less code or overhead,
 see `r-value` and `prefixOp`, but it required me making several different `<math>` elements and made items spacing difficult, so went back to a single component with one template.
 
 5) For some reason, building with optimization on causes issues rendering math.  Currently investigating.
+
+6) Relative text sizes for fractions are odd on mobile for some reason.
 
 # Live demo
 
