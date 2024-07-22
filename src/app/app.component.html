@@ -143,15 +143,28 @@
         </app-mroot>
     </details>
 
+<details>
+    <summary>Compound Sentence from data array (most complex use case)</summary>
+
+    <span *ngFor="let dataSegment of getCompoundStatement();">
+        @if (isString(dataSegment)) {
+            <span>
+            {{dataSegment}}
+            </span>
+        } 
+        @else {
+            <math-exp [mathData]="dataSegment"></math-exp>
+        }
+    </span>
+</details>
+
 
     <details>
         <summary>Grid</summary>
-
         <div *ngFor="let rdata of getMixedNumDataRow(); index as i">
             <div class="col cell">
                 <math-exp [mathData]="rdata" />
             </div>
         </div>
-
     </details>
 </div>

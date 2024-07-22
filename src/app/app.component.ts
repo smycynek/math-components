@@ -183,12 +183,30 @@ public getSampleRoot() {
   return new RootData(null, 4, 3, 8).dataAsObject();
 }
 
+public isString(obj: string | object): boolean {
+  return typeof(obj) == 'string';
+}
+
 public getSampleRootWithValue() {
   return new RootData(null, 4, 3, 8, true).dataAsObject();
 }
+
+public getSampleRootInSentence1() {
+  return new RootData(null, 4, 3, 8).dataAsObject();
+}
+
+public getSampleRootInSentence2() {
+  return new RootData(null, 4, 2, 4).dataAsObject();
+}
+
 public getSampleRootWithOverriddenValue() {
   return new RootData(null, 4, 3, 8, true, OP_NE, 99).dataAsObject();
 }
 
+public getCompoundStatement(): (string | object) [] {
+  return ['Is this value,', new RootData(null, 4, 3, 8).dataAsObject(), ', equivalent to', new MixedNumData(null, 0, 1, 5).dataAsObject(), '?', 'What about',
+    new ExpOpData(null, 2,10), "?", "Is it", new MixedNumData(">", 1000, 0,0), "?"
+  ];
+}
 
 }
