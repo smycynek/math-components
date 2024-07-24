@@ -12,7 +12,7 @@ export class ExpressionComponent {
 
   @Input({transform: toNumber}) value!: number;
   @Input() opType!: string;
-  @Input() prefixOp!: string;
+
   @Input()  showRval!: boolean
   @Input()  displayOp!: string;
   @Input()  displayRval!: number;
