@@ -15,5 +15,9 @@ export class MathSentenceComponent {
     return typeof (obj) == 'string';
   }
 
+  public isPunctuationPhrase(value: string) {
+    return (value.startsWith('.') || value.startsWith(',') || value.startsWith('?'));
+  }
+
   @Input() dataArray!: any;
 }

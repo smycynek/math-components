@@ -7,7 +7,7 @@ import { MixedNumberComponent } from '../expression-components/mixed-number/mixe
 import { RootComponent } from '../expression-components/root/root.component';
 import { MathContainerComponent } from '../math-container/math-container.component';
 import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData } from '../expression-data/expressionData';
-import { OP_GT, OP_GTE, OP_LE, OP_NE } from '../expression-data/operators';
+import { OP_GT, OP_LT, OP_NE } from '../expression-data/operators';
 import { RValueComponent } from '../expression-components/r-value/r-value.component';
 import { MathSentenceComponent } from '../math-sentence/math-sentence.component';
 
@@ -209,14 +209,14 @@ export class AppComponent {
   new MixedNumData(OP_GT, 1000, 0, 0),
   "?"];
 
-  compoundSentence3=["Find all values",
-  new MixedNumData(OP_LE, 10, 0, 0),
-  "or",
-  new MixedNumData(OP_GTE, 20, 0, 0)];
+  compoundSentence3=[`Find all values ${OP_LT}`,
+  new MixedNumData(null, 10, 0, 0),
+  `or ${OP_GT}`,
+  new MixedNumData(null, 20, 0, 0)];
 
   compoundSentence4=['Is this value,',
   new RootData(null, 4, 3, 8).dataAsObject(),
-  ', equivalent to', new MixedNumData(null, 0, 1, 5).dataAsObject(),
+  ', equivalent to', new MixedNumData(null, 0, 1, 5),
   '?'];
 
   compoundSentence5=["Find all numbers between",
@@ -231,7 +231,7 @@ export class AppComponent {
 
   compoundSentence7=[ "Find all prime numbers"];
 
-  compoundSentence8 = [this.newMixedNumber(null, 2,0,0), "times itself (",
+  compoundSentence8 = ['Correct.', this.newMixedNumber(null, 2,0,0), "times itself (",
   this.newMixedNumber(null, 2,0,0), ") equals",  this.newMixedNumber(null, 4,0,0)
 ];
 
