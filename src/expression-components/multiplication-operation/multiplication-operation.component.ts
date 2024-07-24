@@ -10,7 +10,6 @@ import { ExpressionComponent, toNumber } from '../expression/expression.componen
   styleUrl: './multiplication-operation.component.less'
 })
 export class MultiplicationOperationComponent extends ExpressionComponent {
-
   @Input({ transform: toNumber }) left!: number;
   @Input({ transform: toNumber }) right!: number;
 }

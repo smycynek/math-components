@@ -10,7 +10,6 @@ import { ExpressionComponent, toNumber } from '../expression/expression.componen
   styleUrl: './division-operation.component.less'
 })
 export class DivisionOperationComponent extends ExpressionComponent {
-
   @Input({ transform: toNumber }) left!: number;
   @Input({ transform: toNumber }) right!: number;
 }

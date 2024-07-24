@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {  Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ExpressionComponent, toNumber } from '../expression/expression.component';
 
 @Component({
@@ -10,7 +10,6 @@ import { ExpressionComponent, toNumber } from '../expression/expression.componen
   styleUrl: './addition-operation.component.less'
 })
 export class AdditionOperationComponent extends ExpressionComponent {
-
   @Input({ transform: toNumber }) left!: number;
   @Input({ transform: toNumber }) right!: number;
 }

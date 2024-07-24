@@ -14,5 +14,5 @@ import { CommonModule } from '@angular/common';
 export class MixedNumberComponent extends ExpressionComponent {
   @Input({ transform: toNumber }) whole!: number;
   @Input({ transform: toNumber }) numerator!: number;
-  @Input({ transform: toNumber })  denominator!: number;
+  @Input({ transform: toNumber }) denominator!: number;
 }

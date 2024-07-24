@@ -1,17 +1,13 @@
 
-
 export class ExpressionData {
     constructor(public value: number, public opType: string) {
-    }
-    public dataAsObject() {
-        return {...this};
     }
 }
 
 
 export class MixedNumData extends ExpressionData {
     public constructor(
-        //
+    
         public whole: number,
         public numerator: number,
         public denominator: number,
@@ -41,7 +37,7 @@ export class AddOpData extends ExpressionData {
 
 export class SubOpData extends ExpressionData {
     public constructor(
-        //
+    
         public left: number,
         public right: number,
         public showRval = false,
@@ -54,7 +50,7 @@ export class SubOpData extends ExpressionData {
 
 export class MultOpData extends ExpressionData {
     public constructor(
-        //
+    
         public left: number,
         public right: number,
         public showRval = false,
@@ -66,7 +62,7 @@ export class MultOpData extends ExpressionData {
 
 export class DivOpData extends ExpressionData {
     public constructor(
-        //
+    
         public left: number,
         public right: number,
         public showRval = false,
@@ -79,7 +75,7 @@ export class DivOpData extends ExpressionData {
 
 export class ExpOpData extends ExpressionData {
     public constructor(
-        //
+    
         public base: number,
         public power: number,
         public showRval = false,
@@ -93,7 +89,7 @@ export class ExpOpData extends ExpressionData {
 
 export class RootData extends ExpressionData {
     public constructor(
-        //
+    
         public coefficient: number,
         public index: number,
         public radicand: number,

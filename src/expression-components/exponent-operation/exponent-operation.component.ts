@@ -10,7 +10,6 @@ import { ExpressionComponent, toNumber } from '../expression/expression.componen
   styleUrl: './exponent-operation.component.less'
 })
 export class ExponentOperationComponent extends ExpressionComponent {
-
   @Input({ transform: toNumber }) base!: number;
   @Input({ transform: toNumber }) power!: number;
 }

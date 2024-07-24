@@ -34,7 +34,7 @@ and have that component choose the correct angular template and logic to display
 as we can get, but if there is something more direct with less code or overhead, that would be great.
 
 4) I tried to save some code duplication by putting some common template code into a separate template,
-see `r-value` and `prefixOp`, but it required me making several different `<math>` elements and made items spacing difficult, so went back to a single component with one template.
+(see `r-value`) but it required me making several different `<math>` elements and made items spacing difficult, so went back to a single component with one template.
 
 5) For some reason, building with optimization on causes issues rendering math.  Currently investigating.
 
