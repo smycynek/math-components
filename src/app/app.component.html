@@ -136,10 +136,14 @@
 
     <details>
         <summary>Grid</summary>
-        <div *ngFor="let rdata of getMixedNumDataRow(); index as i">
-            <div class="col cell">
+        <div class="container">
+        <div class="row" *ngFor="let rdata of getMixedNumDataRow(); index as i">
+            <div class="col cell" *ngFor="let rdata of getMixedNumDataRow(); index as kk">
+      
                 <math-exp [mathData]="rdata" />
-            </div>
+     
         </div>
+        </div>
+    </div>
     </details>
 </div>
