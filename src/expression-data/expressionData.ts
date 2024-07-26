@@ -1,3 +1,14 @@
+export const MixedNumDataName = "MixedNumData";
+export const AddOpDataName = "AddOpData";
+export const SubOpDataName  = "SubOpData";
+export const DivOpDataName = "DivOpDataName";
+export const MultOpDataName = "MultOpDataName";
+export const ExpOpDataName = "ExpOpDataName";
+export const RootOpDataName = "RootOpDataName";
+
+// It would be nice if we could use the type name
+// property directly, but it gets mangled by the optimizer.
+// There may be another, better way.
 
 export class ExpressionData {
     constructor(public value: number, public opType: string) {
@@ -19,7 +30,7 @@ export class MixedNumData extends ExpressionData {
                 fraction = Math.abs(numerator/denominator);
             }
         super( (Math.abs(whole) + fraction) *  ((whole < 0) ? -1 : 1), 
-        MixedNumData.name );
+        MixedNumDataName );
     }
 }
 
@@ -31,7 +42,7 @@ export class AddOpData extends ExpressionData {
         public showRval =false,
         public displayOp  = "",
         public displayRval = NaN,) {
-        super(left + right, AddOpData.name);
+        super(left + right, AddOpDataName);
     }
 }
 
@@ -44,7 +55,7 @@ export class SubOpData extends ExpressionData {
         public displayOp = "",
         public displayRval  = NaN,
     ) {
-            super(left - right, SubOpData.name);
+            super(left - right, SubOpDataName);
     }
 }
 
@@ -56,7 +67,7 @@ export class MultOpData extends ExpressionData {
         public showRval = false,
         public displayOp = "",
         public displayRval = NaN,) {
-            super(left * right, MultOpData.name);
+            super(left * right, MultOpDataName);
     }
 }
 
@@ -68,7 +79,7 @@ export class DivOpData extends ExpressionData {
         public showRval = false,
         public displayOp = "",
         public displayRval = NaN,) {
-            super(left / right, DivOpData.name);
+            super(left / right, DivOpDataName);
     }
 }
 
@@ -81,7 +92,7 @@ export class ExpOpData extends ExpressionData {
         public showRval = false,
         public displayOp = "",
         public displayRval = NaN,) {
-            super(Math.pow(base, power) , ExpOpData.name);
+            super(Math.pow(base, power) , ExpOpDataName);
     }
 }
 
@@ -97,6 +108,6 @@ export class RootData extends ExpressionData {
         public displayOp = "",
         public displayRval = NaN,
       ) {
-        super( coefficient * (Math.pow(radicand, 1/index)), RootData.name);
+        super( coefficient * (Math.pow(radicand, 1/index)), RootOpDataName);
     }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgComponentOutlet } from '@angular/common';
 
 import { AdditionOperationComponent } from '../expression-components/addition-operation/addition-operation.component';
 import { MixedNumberComponent } from '../expression-components/mixed-number/mixed-number.component';
@@ -8,13 +8,13 @@ import { SubtractionOperationComponent } from '../expression-components/subtract
 import { MultiplicationOperationComponent } from '../expression-components/multiplication-operation/multiplication-operation.component';
 import { DivisionOperationComponent } from '../expression-components/division-operation/division-operation.component';
 import { ExponentOperationComponent } from '../expression-components/exponent-operation/exponent-operation.component';
-import { AddOpData, SubOpData, MultOpData, DivOpData, ExpOpData, RootData } from '../expression-data/expressionData';
+import { AddOpData, SubOpData, MultOpData, DivOpData, ExpOpData, RootData, AddOpDataName, DivOpDataName, ExpOpDataName, MultOpDataName, RootOpDataName, SubOpDataName } from '../expression-data/expressionData';
 import { RValueComponent } from '../expression-components/r-value/r-value.component';
 
 @Component({
   selector: 'math-exp',
   standalone: true,
-  imports: [CommonModule, RValueComponent],
+  imports: [RValueComponent, NgComponentOutlet],
   templateUrl: './math-container.component.html',
   styleUrl: './math-container.component.less'
 })
@@ -22,18 +22,19 @@ export class MathContainerComponent {
   @Input() mathData!: any;
 
   getMathComponent() {  // Could be a factory call
+    
     switch (this.mathData.opType) {
-      case AddOpData.name:
+      case AddOpDataName:
         return AdditionOperationComponent;
-      case SubOpData.name:
+      case SubOpDataName:
         return SubtractionOperationComponent;
-      case MultOpData.name:
+      case MultOpDataName:
         return MultiplicationOperationComponent;
-      case DivOpData.name:
+      case DivOpDataName:
         return DivisionOperationComponent;
-      case ExpOpData.name:
+      case ExpOpDataName:
         return ExponentOperationComponent;
-      case RootData.name:
+      case RootOpDataName:
         return RootComponent;
       default:
         return MixedNumberComponent;

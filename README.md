@@ -36,9 +36,7 @@ as we can get, but if there is something more direct with less code or overhead,
 4) I tried to save some code duplication by putting some common template code into a separate template,
 (see `r-value`) but it required me making several different `<math>` elements and made items spacing difficult, so went back to a single component with one template.
 
-5) For some reason, building with optimization on causes issues rendering math.  Currently investigating.
-
-6) Relative text sizes for fractions are odd on mobile for some reason.
+5) Relative text sizes for fractions are odd on mobile for some reason.
 
 # Live demo
 

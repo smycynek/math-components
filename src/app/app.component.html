@@ -110,7 +110,7 @@
         <p>Generic container with expression data declared explicitly rather than from a helper
             <code>ExpressionData</code> object</p>
         <math-exp
-            [mathData]="{opType: '_RootData', coefficient: 4, index: 3, radicand: 8, value: 8, showRval: true, displayOp: '&ne;', displayRval:99}" />
+            [mathData]="{opType: 'RootOpDataName', coefficient: 4, index: 3, radicand: 8, value: 8, showRval: true, displayOp: '&ne;', displayRval:99}" />
         <p>Root component declared explicitly using an <code>app-mroot</code> component</p>
         <app-mroot coefficient="4" index="3" radicand="8" value="8" [showRval]=true displayOp="&ne;" [displayRval]="99">
         </app-mroot>
@@ -118,9 +118,6 @@
 
     <details>
         <summary>Compound Sentence from data array (most complex use case)</summary>
-
-        <!-- Need to abstract this div, span, and ngFor into a component -->
-
         <math-sentence [dataArray]="compoundSentence1" />
         <math-sentence [dataArray]="compoundSentence2" />
         <math-sentence [dataArray]="compoundSentence3" />
@@ -139,9 +136,7 @@
         <div class="container">
         <div class="row" *ngFor="let rdata of getMixedNumDataRow(); index as i">
             <div class="col cell" *ngFor="let rdata of getMixedNumDataRow(); index as kk">
-      
                 <math-exp [mathData]="rdata" />
-     
         </div>
         </div>
     </div>

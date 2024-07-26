@@ -5,22 +5,22 @@
     <mrow>
         @if (coefficient !== 1) {
         <mn>
-              {{coefficient | number}}
+              {{coefficient}}
         </mn>
     }
         @if(index === 2) {
         <msqrt>
             <mn>
-                {{radicand | number}}
+                {{radicand}}
             </mn>
         </msqrt>
         } @else {
         <mroot>
             <mn>
-                {{radicand | number}}
+                {{radicand}}
             </mn>
             <mn>
-                {{index | number }}
+                {{index}}
             </mn>
         </mroot>
         }
