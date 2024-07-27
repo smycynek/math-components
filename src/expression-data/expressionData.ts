@@ -123,3 +123,5 @@ export class RootData extends ExpressionData {
         super( coefficient * (Math.pow(radicand, 1/index)), RootOpDataName);
     }
 }
+
+export type OperationType = RootData | ExpOpData | DivOpData | MultOpData | SubOpData | AddOpData | MixedNumData | StringExpressionData;

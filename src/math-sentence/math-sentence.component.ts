@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MathContainerComponent } from '../math-container/math-container.component';
 import { CommonModule } from '@angular/common';
-import { AddOpData, SubOpData, MultOpData, DivOpData, ExpOpData, RootData, MixedNumData, StringExpressionData } from '../expression-data/expressionData';
+import {  OperationType } from '../expression-data/expressionData';
 
 @Component({
   selector: 'math-sentence',
@@ -16,5 +16,5 @@ export class MathSentenceComponent {
     return (value.startsWith('.') || value.startsWith(',') || value.startsWith('?'));
   }
 
-  @Input() dataArray!: (AddOpData | SubOpData | MultOpData | DivOpData | ExpOpData | RootData | MixedNumData | StringExpressionData)[];
+  @Input() dataArray!: OperationType[];
   }

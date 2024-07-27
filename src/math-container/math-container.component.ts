@@ -8,7 +8,7 @@ import { SubtractionOperationComponent } from '../expression-components/subtract
 import { MultiplicationOperationComponent } from '../expression-components/multiplication-operation/multiplication-operation.component';
 import { DivisionOperationComponent } from '../expression-components/division-operation/division-operation.component';
 import { ExponentOperationComponent } from '../expression-components/exponent-operation/exponent-operation.component';
-import { AddOpData, AddOpDataName, DivOpData, DivOpDataName, ExpOpData, ExpOpDataName, MixedNumData, MultOpData, MultOpDataName, RootData, RootOpDataName, StringDataName, StringExpressionData, SubOpData, SubOpDataName } from '../expression-data/expressionData';
+import { AddOpDataName, DivOpDataName, ExpOpDataName,  MultOpDataName, OperationType, RootOpDataName, StringDataName, SubOpDataName } from '../expression-data/expressionData';
 import { StringValueComponent } from '../expression-components/string/string-value.component';
 
 
@@ -21,7 +21,7 @@ import { StringValueComponent } from '../expression-components/string/string-val
 })
 export class MathContainerComponent {
 
-  @Input() mathData!: AddOpData | SubOpData | MultOpData | DivOpData | ExpOpData | RootData | MixedNumData | StringExpressionData;
+  @Input() mathData!: OperationType;
 
   getMathComponent() {  // Could be a factory call
     
