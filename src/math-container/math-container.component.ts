@@ -19,6 +19,7 @@ import { AddOpData, AddOpDataName, DivOpData, DivOpDataName, ExpOpData, ExpOpDat
   styleUrl: './math-container.component.less'
 })
 export class MathContainerComponent {
+
   @Input() mathData!: AddOpData | SubOpData | MultOpData | DivOpData | ExpOpData | RootData | MixedNumData;
 
   getMathComponent() {  // Could be a factory call

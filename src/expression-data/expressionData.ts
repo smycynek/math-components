@@ -13,6 +13,7 @@ export const RootOpDataName = "RootOpDataName";
 export class ExpressionData {
     constructor(public value: number, public opType: string) {
     }
+    [key: string]: unknown;
 }
 
 
