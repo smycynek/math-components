@@ -5,6 +5,7 @@ export const DivOpDataName = "DivOpDataName";
 export const MultOpDataName = "MultOpDataName";
 export const ExpOpDataName = "ExpOpDataName";
 export const RootOpDataName = "RootOpDataName";
+export const StringDataName = "StringData";
 
 // It would be nice if we could use the type name
 // property directly, but it gets mangled by the optimizer.
@@ -16,6 +17,16 @@ export class ExpressionData {
     [key: string]: unknown;
 }
 
+export class StringExpressionData extends ExpressionData {
+ public constructor(
+    public stringValue: string) {
+        super(0, StringDataName)
+    }
+}
+
+export function s(value: string) {
+    return new StringExpressionData(value);
+}
 
 export class MixedNumData extends ExpressionData {
     public constructor(

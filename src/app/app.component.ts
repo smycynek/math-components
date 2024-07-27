@@ -5,7 +5,7 @@ import { ExpressionComponent } from '../expression-components/expression/express
 import { MixedNumberComponent } from '../expression-components/mixed-number/mixed-number.component';
 import { RootComponent } from '../expression-components/root/root.component';
 import { MathContainerComponent } from '../math-container/math-container.component';
-import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData } from '../expression-data/expressionData';
+import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData, s } from '../expression-data/expressionData';
 import { OP_GT, OP_LT, OP_NE } from '../expression-data/operators';
 import { MathSentenceComponent } from '../math-sentence/math-sentence.component';
 import { CommonModule } from '@angular/common';
@@ -179,48 +179,72 @@ export class AppComponent {
     return new RootData(4, 3, 8, true, OP_NE, 99);
   }
 
-  compoundSentence1 = ['Is this value,',
-    new RootData(4, 3, 8),
-    ', equivalent to', new MixedNumData(0, 1, 5),
-    '?'];
+  compoundSentence1 = [s('Is this value,'),
+  new RootData(4, 3, 8),
+  s(', equivalent to'),
+  new MixedNumData(0, 1, 5),
+  s('?')];
 
-  compoundSentence2 = ['What about',
+  compoundSentence2 = [
+    s('What about'),
     new ExpOpData(2, 10),
-    "?",
-    "Is it >",
+    s("?"),
+    s("Is it >"),
     new MixedNumData(1000, 0, 0),
-    "?"];
+    s("?")];
 
-  compoundSentence3 = [`Find all values ${OP_LT}`,
-  new MixedNumData(10, 0, 0),
-  `or ${OP_GT}`,
-  new MixedNumData(20, 0, 0)];
-
-  compoundSentence4 = ['Is this value,',
-    new RootData(4, 3, 8),
-    ', equivalent to', new MixedNumData(0, 1, 5),
-    '?'];
-
-  compoundSentence5 = ["Find all numbers between",
-    new MixedNumData(5, 0, 0),
-    "and",
+  compoundSentence3 = [
+    s(`Find all values ${OP_LT}`),
     new MixedNumData(10, 0, 0),
-    "."];
+    s(`or ${OP_GT}`),
+    new MixedNumData(20, 0, 0)];
 
-  compoundSentence6 = ["Incorrect.",
-    new DivOpData(10, 3, true),
-    ", not a whole number."];
+  compoundSentence4 = [
+    s('Is this value,'),
+    new RootData(4, 3, 8),
+    s(', equivalent to'),
+    new MixedNumData(0, 1, 5),
+    s('?')];
 
-  compoundSentence7 = ["Find all prime numbers"];
+  compoundSentence5 = [s("Find all numbers between"),
+  new MixedNumData(5, 0, 0),
+  s("and"),
+  new MixedNumData(10, 0, 0),
+  s(".")];
 
-  compoundSentence8 = ['Correct.', this.newMixedNumber(2, 0, 0), "times itself (",
-    this.newMixedNumber(2, 0, 0), ") equals", this.newMixedNumber(4, 0, 0)
+  compoundSentence6 = [s("Incorrect."),
+  new DivOpData(10, 3, true),
+  s(", not a whole number.")];
+
+  compoundSentence7 = [
+    s("Find all prime numbers")];
+
+  compoundSentence8 = [
+    s('Correct.'),
+    this.newMixedNumber(2, 0, 0),
+    s("times itself ("),
+    this.newMixedNumber(2, 0, 0),
+    s(") equals"),
+    this.newMixedNumber(4, 0, 0)
   ];
 
-  compoundSentence9 = ["There are no whole numbers when multiplied by themselves that are equal to", this.newMixedNumber(5, 0, 0)];
+  compoundSentence9 = [
+    s("There are no whole numbers when multiplied by themselves that are equal to"),
+    this.newMixedNumber(5, 0, 0)];
 
-  compoundSentence10 = [this.newMixedNumber(12, 0, 0), "has factors such as", this.newMixedNumber(2, 0, 0), ", ", this.newMixedNumber(3, 0, 0), ", and", this.newMixedNumber(4, 0, 0)];
+  compoundSentence10 = [
+    this.newMixedNumber(12, 0, 0),
+    s("has factors such as"),
+    this.newMixedNumber(2, 0, 0),
+    s(", "),
+    this.newMixedNumber(3, 0, 0),
+    s(", and"),
+    this.newMixedNumber(4, 0, 0)];
 
-  compoundSentence11 = ['Incorrect', this.NewMult(3, 4, true), ", not", this.newMixedNumber(15, 0, 0)]
+  compoundSentence11 = [s('Incorrect'),
+  this.NewMult(3, 4, true),
+  s(", not"),
+  this.newMixedNumber(15, 0, 0)];
+
 
 }

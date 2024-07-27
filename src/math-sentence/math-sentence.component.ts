@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MathContainerComponent } from '../math-container/math-container.component';
 import { CommonModule } from '@angular/common';
+import { AddOpData, SubOpData, MultOpData, DivOpData, ExpOpData, RootData, MixedNumData, StringExpressionData } from '../expression-data/expressionData';
 
 @Component({
   selector: 'math-sentence',
@@ -11,13 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class MathSentenceComponent {
 
-  public isString(obj: string | object): boolean {
-    return typeof (obj) == 'string';
-  }
-
   public isPunctuationPhrase(value: string) {
     return (value.startsWith('.') || value.startsWith(',') || value.startsWith('?'));
   }
 
-  @Input() dataArray!: any;
-}
+  @Input() dataArray!: (AddOpData | SubOpData | MultOpData | DivOpData | ExpOpData | RootData | MixedNumData | StringExpressionData)[];
+  }

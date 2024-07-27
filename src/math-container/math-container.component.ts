@@ -8,7 +8,8 @@ import { SubtractionOperationComponent } from '../expression-components/subtract
 import { MultiplicationOperationComponent } from '../expression-components/multiplication-operation/multiplication-operation.component';
 import { DivisionOperationComponent } from '../expression-components/division-operation/division-operation.component';
 import { ExponentOperationComponent } from '../expression-components/exponent-operation/exponent-operation.component';
-import { AddOpData, AddOpDataName, DivOpData, DivOpDataName, ExpOpData, ExpOpDataName, MixedNumData, MultOpData, MultOpDataName, RootData, RootOpDataName, SubOpData, SubOpDataName } from '../expression-data/expressionData';
+import { AddOpData, AddOpDataName, DivOpData, DivOpDataName, ExpOpData, ExpOpDataName, MixedNumData, MultOpData, MultOpDataName, RootData, RootOpDataName, StringDataName, StringExpressionData, SubOpData, SubOpDataName } from '../expression-data/expressionData';
+import { StringValueComponent } from '../expression-components/string/string-value.component';
 
 
 @Component({
@@ -20,11 +21,13 @@ import { AddOpData, AddOpDataName, DivOpData, DivOpDataName, ExpOpData, ExpOpDat
 })
 export class MathContainerComponent {
 
-  @Input() mathData!: AddOpData | SubOpData | MultOpData | DivOpData | ExpOpData | RootData | MixedNumData;
+  @Input() mathData!: AddOpData | SubOpData | MultOpData | DivOpData | ExpOpData | RootData | MixedNumData | StringExpressionData;
 
   getMathComponent() {  // Could be a factory call
     
     switch (this.mathData.opType) {
+      case StringDataName:
+        return StringValueComponent;
       case AddOpDataName:
         return AdditionOperationComponent;
       case SubOpDataName:
