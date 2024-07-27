@@ -8,13 +8,13 @@ import { SubtractionOperationComponent } from '../expression-components/subtract
 import { MultiplicationOperationComponent } from '../expression-components/multiplication-operation/multiplication-operation.component';
 import { DivisionOperationComponent } from '../expression-components/division-operation/division-operation.component';
 import { ExponentOperationComponent } from '../expression-components/exponent-operation/exponent-operation.component';
-import { AddOpData, SubOpData, MultOpData, DivOpData, ExpOpData, RootData, AddOpDataName, DivOpDataName, ExpOpDataName, MultOpDataName, RootOpDataName, SubOpDataName } from '../expression-data/expressionData';
-import { RValueComponent } from '../expression-components/r-value/r-value.component';
+import { AddOpDataName, DivOpDataName, ExpOpDataName, MultOpDataName, RootOpDataName, SubOpDataName } from '../expression-data/expressionData';
+
 
 @Component({
   selector: 'math-exp',
   standalone: true,
-  imports: [RValueComponent, NgComponentOutlet],
+  imports: [CommonModule, NgComponentOutlet],
   templateUrl: './math-container.component.html',
   styleUrl: './math-container.component.less'
 })

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
 
 import { ExpressionComponent } from '../expression-components/expression/expression.component';
 import { MixedNumberComponent } from '../expression-components/mixed-number/mixed-number.component';
@@ -8,13 +7,13 @@ import { RootComponent } from '../expression-components/root/root.component';
 import { MathContainerComponent } from '../math-container/math-container.component';
 import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData } from '../expression-data/expressionData';
 import { OP_GT, OP_LT, OP_NE } from '../expression-data/operators';
-import { RValueComponent } from '../expression-components/r-value/r-value.component';
 import { MathSentenceComponent } from '../math-sentence/math-sentence.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MathSentenceComponent, MathContainerComponent, CommonModule, RouterOutlet, ExpressionComponent, MixedNumberComponent, RootComponent, RValueComponent],
+  imports: [CommonModule, MathSentenceComponent, MathContainerComponent, RouterOutlet, ExpressionComponent, MixedNumberComponent, RootComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less'
 })
@@ -168,9 +167,6 @@ export class AppComponent {
     ];
   }
 
-  preamble = "Sorry, ";
-  postamble = ".  Try again."
-
   public getSampleRoot() {
     return new RootData(4, 3, 8);
   }
@@ -225,6 +221,6 @@ export class AppComponent {
 
   compoundSentence10 = [this.newMixedNumber(12, 0, 0), "has factors such as", this.newMixedNumber(2, 0, 0), ", ", this.newMixedNumber(3, 0, 0), ", and", this.newMixedNumber(4, 0, 0)];
 
-  compoundSentence11 = [this.NewMult(3, 4, true), ", not", this.newMixedNumber(12, 0, 0)]
+  compoundSentence11 = ['Incorrect', this.NewMult(3, 4, true), ", not", this.newMixedNumber(15, 0, 0)]
 
 }

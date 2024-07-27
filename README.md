@@ -24,9 +24,7 @@ export class MathContainerComponent {
   @Input() expressionData!: any;
 ```
 
-I don't know enough about how @Input() and angular mappings using attributes and transforms work to say.
-
-2)  Can I create a better way (a class factory) to choose the component to render?
+2)  Can I create a better way (a class factory) to choose the component to render rather than relying on type name?
 
 3)  Is there a simpler way to do this overall?  I would just like to pass a simple data payload
 to a component (ideally a strongly typed Typescript object, but a generic object with key-value pairs is okay)
