@@ -8,7 +8,7 @@ import { SubtractionOperationComponent } from '../expression-components/subtract
 import { MultiplicationOperationComponent } from '../expression-components/multiplication-operation/multiplication-operation.component';
 import { DivisionOperationComponent } from '../expression-components/division-operation/division-operation.component';
 import { ExponentOperationComponent } from '../expression-components/exponent-operation/exponent-operation.component';
-import { AddOpDataName, DivOpDataName, ExpOpDataName,  MultOpDataName, OperationType, RootOpDataName, StringDataName, SubOpDataName } from '../expression-data/expressionData';
+import { AddOpDataName, DivOpDataName, ExpOpDataName,  MixedNumDataName,  MultOpDataName, OperationType, RootOpDataName, StringDataName, SubOpDataName } from '../expression-data/expressionData';
 import { StringValueComponent } from '../expression-components/string/string-value.component';
 
 
@@ -21,9 +21,9 @@ import { StringValueComponent } from '../expression-components/string/string-val
 })
 export class MathContainerComponent {
 
-  @Input() mathData!: OperationType;
+  @Input() mathData!: OperationType;  // Could also be the base class ExpressionData;
 
-  getMathComponent() {  // Could be a factory call
+  getMathComponent() {  // Could be a factory call or a type map, but this is probably fine.
     
     switch (this.mathData.opType) {
       case StringDataName:
@@ -40,8 +40,10 @@ export class MathContainerComponent {
         return ExponentOperationComponent;
       case RootOpDataName:
         return RootComponent;
+        case MixedNumDataName:
+          return MixedNumberComponent;
       default:
-        return MixedNumberComponent;
+        throw Error(`Unknown math opType {this.mathData.opType}`);
     }
   }
 }
