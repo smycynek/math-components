@@ -2,15 +2,14 @@
     <h1>Math Component Test</h1>
     <a href="https://github.com/smycynek/math-components">https://github.com/smycynek/math-components</a>
 
+    <h2>The challenge</h2>
     <p>I'd like a system to render various math expressions, their calculated values, and simple equalities and
-        inequalities to improve the math rendering code I use in my children's game 
-        
-        <a href="https://stevenvictor.net/number-munchers/">https://stevenvictor.net/number-munchers</a>
-        </p>
-        
-        
-        <p>MathML can do this, and I already use it, but: </p>
+        inequalities to improve the math rendering code I use in my children's game
 
+        <a href="https://stevenvictor.net/number-munchers/">https://stevenvictor.net/number-munchers</a>
+    </p>
+    <h2>The complications</h2>
+    <p>MathML can do this formatting, and I already use it, but: </p>
     <ol>
         <li> I'd like to generate data dynamically from lists of pseudo-random numbers to populate math expressions.
         </li>
@@ -41,6 +40,7 @@
         problem for another.
     </p>
 
+    <h2>First attempt</h2>
     <p>I started off with a bit of a hack, where I used the DOM API to append MathML tags to a node and then set the
         <code>innerHTML</code>
         property of another <code>div</code> with that node's data. This is a messy approach though.
@@ -48,6 +48,11 @@
         expression data types that each
         need to be bound to a different component.
     </p>
+
+
+
+    <h2>Angular-centric attempt</h2>
+
     <p>This is my component-centric attempt you can see that the github link above. With the set of components in this
         project, we can display various expression types (fractions, whole numbers,
         roots addition, subtraction, multiplication, division, exponents). Here's a root expression:
@@ -59,17 +64,16 @@
         We can also optionally show the value the expression is equal to (calculated automatically). For example, we can
         render:
     </p>
-
-    <p>
-        <math-exp [mathData]="getSampleRootWithValue()"></math-exp>
+    <p><math-exp [mathData]="getSampleRootWithValue()"></math-exp>
     </p>
 
-    <p> We can also optionally override the equality operator and displayed r-value. 
+    <p> We can also optionally override the equality operator and displayed r-value.
 
     </p>
     <div>
         <math-exp [mathData]="getSampleRootWithOverriddenValue()" />
     </div>
+
 
     <details>
         <summary>More examples: Note that some equalities are intentionally overridden to incorrect</summary>
@@ -169,9 +173,18 @@
         </div>
     </details>
 
-   <p>
-    One issue I have is the code duplication of the r-value (the '= 2, etc' part) code in the component HTML templates.
-    Ideally this could be reused, inherited, or somehow references.  One way is to split that code into a new component, but then
-    we have two different <code>math</code> expressions to represent one value, and the whitespace and splitting up of data is messy.
-   </p>
+    <h2>What's Next</h2>
+    <p>
+        One issue I have is the code duplication of the r-value (the '= 2, etc' part) code in the component HTML
+        templates.
+        Ideally this could be reused, inherited, or somehow references. One way is to split that code into a new
+        component, but then
+        we have two different <code>math</code> expressions to represent one value, and the whitespace and splitting up
+        of data is messy.
+    </p>
+    <p>
+        After I resolve this, I'll put this into <a href="https://stevenvictor.net/number-munchers">
+            https://stevenvictor.net/number-munchers</a> and start adding more advanced math content to it.
+
+    </p>
 </div>
