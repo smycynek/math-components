@@ -8,8 +8,9 @@ import { SubtractionOperationComponent } from '../expression-components/subtract
 import { MultiplicationOperationComponent } from '../expression-components/multiplication-operation/multiplication-operation.component';
 import { DivisionOperationComponent } from '../expression-components/division-operation/division-operation.component';
 import { ExponentOperationComponent } from '../expression-components/exponent-operation/exponent-operation.component';
-import { AddOpDataName, DivOpDataName, ExpOpDataName,  ExpressionData,  MixedNumDataName,  MultOpDataName, RootOpDataName, StringDataName, SubOpDataName } from '../expression-data/expressionData';
+import { AddOpDataName, DivOpDataName, ExpOpDataName,  ExpressionData,  LogOpDataName,  MixedNumDataName,  MultOpDataName, RootOpDataName, StringDataName, SubOpDataName } from '../expression-data/expressionData';
 import { StringValueComponent } from '../expression-components/string/string-value.component';
+import { LogComponent } from '../expression-components/logarithm/log.component';
 
 @Component({
   selector: 'math-exp',
@@ -39,8 +40,10 @@ export class MathContainerComponent {
         return ExponentOperationComponent;
       case RootOpDataName:
         return RootComponent;
-        case MixedNumDataName:
+      case MixedNumDataName:
           return MixedNumberComponent;
+      case LogOpDataName:
+            return LogComponent;
       default:
         throw Error(`Unknown math opType {this.mathData.opType}`);
     }

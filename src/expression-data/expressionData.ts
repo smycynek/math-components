@@ -6,7 +6,7 @@ export const MultOpDataName = "MultOpDataName";
 export const ExpOpDataName = "ExpOpDataName";
 export const RootOpDataName = "RootOpDataName";
 export const StringDataName = "StringData";
-
+export const LogOpDataName = "LogOpDataName"
 // It would be nice if we could use the type name
 // property directly, but it gets mangled by the optimizer.
 // There may be another, better way.
@@ -121,3 +121,20 @@ export class RootData extends ExpressionData {
         super( coefficient * (Math.pow(radicand, 1/index)), RootOpDataName);
     }
 }
+
+const logWithBase = (argument:number, base:number) => Math.log(argument / Math.log(base));
+
+export class LogExpData extends ExpressionData {
+    public constructor(
+        public coefficient: number,
+        public base: number,
+        public argument: number,
+        public showRval = false,
+        public displayOp = "",
+        public displayRval = NaN,
+      ) {
+        super( coefficient * logWithBase(argument, base), LogOpDataName);
+    }
+}
+
+

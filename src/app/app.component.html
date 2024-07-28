@@ -127,6 +127,16 @@
             </div>
 
         </details>
+
+        <details class="indent">
+            <summary>Logs</summary>
+
+            <div *ngFor="let rdata of getLogData(); index as i">
+                <math-exp [mathData]="rdata" />
+            </div>
+
+        </details>
+
     </details>
 
     <details>

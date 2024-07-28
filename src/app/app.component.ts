@@ -5,7 +5,7 @@ import { ExpressionComponent } from '../expression-components/expression/express
 import { MixedNumberComponent } from '../expression-components/mixed-number/mixed-number.component';
 import { RootComponent } from '../expression-components/root/root.component';
 import { MathContainerComponent } from '../math-container/math-container.component';
-import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData, s } from '../expression-data/expressionData';
+import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData, s, LogExpData } from '../expression-data/expressionData';
 import { OP_GT, OP_LT, OP_NE } from '../expression-data/operators';
 import { MathSentenceComponent } from '../math-sentence/math-sentence.component';
 import { CommonModule } from '@angular/common';
@@ -155,6 +155,15 @@ export class AppComponent {
       new ExpOpData(4, 3, true, OP_NE, 2),
       new ExpOpData(4, 3, true, "", 99),
       new ExpOpData(4, 3, true, OP_NE),
+    ];
+  }
+
+  public getLogData() {
+    return [
+      new LogExpData(2, 2, 64, true),
+      new LogExpData(1, 10, 1000),
+      new LogExpData(1, 10, 1000, true),
+      new LogExpData(1, 10, 1000, true, OP_NE, 100),
     ];
   }
 
