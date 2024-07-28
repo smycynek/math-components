@@ -14,7 +14,7 @@ export const StringDataName = "StringData";
 export class ExpressionData {
     constructor(public value: number, public opType: string) {
     }
-    [key: string]: unknown;
+    [key: string]: unknown; // Needed to index subclass properties
 }
 
 export class StringExpressionData extends ExpressionData {
@@ -108,8 +108,6 @@ export class ExpOpData extends ExpressionData {
     }
 }
 
-
-
 export class RootData extends ExpressionData {
     public constructor(
     
@@ -123,5 +121,3 @@ export class RootData extends ExpressionData {
         super( coefficient * (Math.pow(radicand, 1/index)), RootOpDataName);
     }
 }
-
-export type OperationType = RootData | ExpOpData | DivOpData | MultOpData | SubOpData | AddOpData | MixedNumData | StringExpressionData;
