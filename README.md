@@ -4,7 +4,7 @@
 
 # Workflow:
 
-To create a new operation type;
+To create a new operation type:
 
 1) Create a subclass of `ExpressionData` in `expressionData.ts`
 
@@ -18,23 +18,15 @@ To create a new operation type;
 
 # Questions/TODO
 
-1)  Can I workaround the use of `any` here?
-```
-export class MathContainerComponent {
-  @Input() expressionData!: any;
-```
+1)  Can I create a better way (a class factory) to choose the component to render rather than relying on type name?
+I looked at using a <code>Record</code> map, but that seemed like a lot of overhead.
 
-2)  Can I create a better way (a class factory) to choose the component to render rather than relying on type name?
+2) I tried to save some code duplication by putting some common template code (the r-value '= 2' part) into a separate template,
+ but it required me making several different `<math>` elements and made items spacing difficult, so went back to a single component with one template.
 
-3)  Is there a simpler way to do this overall?  I would just like to pass a simple data payload
-to a component (ideally a strongly typed Typescript object, but a generic object with key-value pairs is okay)
-and have that component choose the correct angular template and logic to display it.  This might be about as good
-as we can get, but if there is something more direct with less code or overhead, that would be great.
+3) Relative text sizes for fractions are odd on mobile for some reason.
 
-4) I tried to save some code duplication by putting some common template code into a separate template,
-(see `r-value`) but it required me making several different `<math>` elements and made items spacing difficult, so went back to a single component with one template.
-
-5) Relative text sizes for fractions are odd on mobile for some reason.
+4) Is there a simpler way to do this overall?
 
 # Live demo
 

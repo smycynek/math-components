@@ -169,11 +169,9 @@
         </div>
     </details>
 
-    <p>I have a few remaining issues. One is that I rely on a type name an expression data object to bind it to an
-        angular component. See <code>MathContainerComponent</code>. The other is the use of the <code>any</code>
-        type
-        in a few places. I'd like to avoid this, but I'm not sure if it's possible with this design. I have the excuse
-        of
-        "I implement this in ten minute increments on the weekends in my spare time." :)
-    </p>
+   <p>
+    One issue I have is the code duplication of the r-value (the '= 2, etc' part) code in the component HTML templates.
+    Ideally this could be reused, inherited, or somehow references.  One way is to split that code into a new component, but then
+    we have two different <code>math</code> expressions to represent one value, and the whitespace and splitting up of data is messy.
+   </p>
 </div>

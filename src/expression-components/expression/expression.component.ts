@@ -26,3 +26,4 @@ export function toNumber(value: string ): number {
 export function toExpression(value: string ): number {
   return Number(value);
 };
+

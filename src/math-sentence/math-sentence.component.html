@@ -1,12 +1,5 @@
 <div class="math-sentence">
     <span *ngFor="let dataSegment of dataArray;">
-        @if (isString(dataSegment)) {
-        <span [ngClass]="{'math-text-short': isPunctuationPhrase(dataSegment),  'math-text': !isPunctuationPhrase(dataSegment)}">
-            {{dataSegment}}
-        </span>
-        }
-        @else {
         <math-exp [mathData]="dataSegment"></math-exp>
-        }
     </span>
 </div>

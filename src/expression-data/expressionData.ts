@@ -5,6 +5,7 @@ export const DivOpDataName = "DivOpDataName";
 export const MultOpDataName = "MultOpDataName";
 export const ExpOpDataName = "ExpOpDataName";
 export const RootOpDataName = "RootOpDataName";
+export const StringDataName = "StringData";
 
 // It would be nice if we could use the type name
 // property directly, but it gets mangled by the optimizer.
@@ -13,8 +14,19 @@ export const RootOpDataName = "RootOpDataName";
 export class ExpressionData {
     constructor(public value: number, public opType: string) {
     }
+    [key: string]: unknown; // Needed to index subclass properties
 }
 
+export class StringExpressionData extends ExpressionData {
+ public constructor(
+    public stringValue: string) {
+        super(0, StringDataName)
+    }
+}
+
+export function s(value: string) {
+    return new StringExpressionData(value);
+}
 
 export class MixedNumData extends ExpressionData {
     public constructor(
@@ -95,8 +107,6 @@ export class ExpOpData extends ExpressionData {
             super(Math.pow(base, power) , ExpOpDataName);
     }
 }
-
-
 
 export class RootData extends ExpressionData {
     public constructor(
