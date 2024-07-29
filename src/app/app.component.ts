@@ -5,7 +5,7 @@ import { ExpressionComponent } from '../expression-components/expression/express
 import { MixedNumberComponent } from '../expression-components/mixed-number/mixed-number.component';
 import { RootComponent } from '../expression-components/root/root.component';
 import { MathContainerComponent } from '../math-container/math-container.component';
-import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData, s, LogExpData } from '../expression-data/expressionData';
+import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData, s, LogExpData, ExpressionData } from '../expression-data/expressionData';
 import { OP_GT, OP_LT, OP_NE } from '../expression-data/operators';
 import { MathSentenceComponent } from '../math-sentence/math-sentence.component';
 import { CommonModule } from '@angular/common';
@@ -167,13 +167,26 @@ export class AppComponent {
     ];
   }
 
-  public getMixedNumDataRow() {
-    return [
-      new MixedNumData(0, 4, 5),
-      new MixedNumData(0, 1, 2),
-      new MixedNumData(0, 5, 9),
+ 
+  public indices() {return [0,1,2,3]};
 
-    ];
+  public getVariousDataRow(): ExpressionData[] {
+    return [new MixedNumData(1, 4, 5),
+    new MixedNumData(0, 1, 2),
+    new MixedNumData(-1, 5, 9),
+    new ExpOpData(5,2),
+    new ExpOpData(10,2),
+    new ExpOpData(2,3),
+    new LogExpData(5,2,64),
+    new LogExpData(1,10,1000),
+    new LogExpData(1,2,64),
+    new DivOpData(10,2),
+    new SubOpData(10,2),
+    new AddOpData(10,2),
+    new MultOpData(10,2),
+    new RootData(2,3,8),
+    new RootData(2,2,16),
+    new RootData(1,2,25)];
   }
 
   public getSampleRoot() {

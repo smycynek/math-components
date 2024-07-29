@@ -122,7 +122,7 @@ export class RootData extends ExpressionData {
     }
 }
 
-const logWithBase = (argument:number, base:number) => Math.log(argument / Math.log(base));
+const logWithBase = (argument:number, base:number) => Math.log(argument)/ Math.log(base);
 
 export class LogExpData extends ExpressionData {
     public constructor(

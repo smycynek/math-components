@@ -175,13 +175,14 @@
     <details>
         <summary>Grid</summary>
         <div class="container">
-            <div class="row" *ngFor="let rdata of getMixedNumDataRow(); index as i">
-                <div class="col cell" *ngFor="let rdata of getMixedNumDataRow(); index as kk">
-                    <math-exp [mathData]="rdata" />
+            <div class="row" *ngFor="let c of indices(); let ci=index">
+                <div class="col cell" *ngFor="let r of indices(); let ri=index">
+                    <math-exp [mathData]="getVariousDataRow()[ci*4+ri]" />
                 </div>
             </div>
         </div>
     </details>
+
 
     <h2>What's Next</h2>
     <p>
