@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-expression',
+  selector: 'app-base-expression',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './expression.component.html',
-  styleUrl: './expression.component.less'
+  templateUrl: './base-expression.component.html',
+  styleUrl: './base-expression.component.less'
 })
-export class ExpressionComponent {
+export class BaseExpressionComponent {
 
   @Input({transform: toNumber}) value!: number;
   @Input() opType!: string;

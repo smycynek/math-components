@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ExpressionComponent, toNumber } from '../expression/expression.component';
+import { BaseExpressionComponent, toNumber } from '../base-expression/base-expression.component';
 
 
 
 @Component({
-  selector: 'app-log',
+  selector: 'app-logarithm-expression',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './log.component.html',
-  styleUrl: './log.component.less'
+  templateUrl: './logarithm-expression.component.html',
+  styleUrl: './logarithm-expression.component.less'
 })
-export class LogComponent extends ExpressionComponent {  
+export class LogarithmExpressionComponent extends BaseExpressionComponent {  
   @Input({ transform: toNumber }) coefficient!: number;
   @Input({ transform: toNumber }) base!: number;
   @Input({ transform: toNumber }) argument!: number;

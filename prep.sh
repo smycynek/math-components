@@ -2,5 +2,5 @@
 rm -rf dist
 
 
-ng build  --configuration=production --base-href /math-components/
+npx ng build  --configuration=production --base-href /math-components/
 

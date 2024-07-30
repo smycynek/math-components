@@ -1,17 +1,17 @@
 import { Component, Input } from '@angular/core';
-import { ExpressionComponent } from '../expression/expression.component';
+import { BaseExpressionComponent } from '../base-expression/base-expression.component';
 import { CommonModule } from '@angular/common';
 
 
 
 @Component({
-  selector: 'app-string-value',
+  selector: 'app-string-expression',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './string-value.component.html',
-  styleUrl: './string-value.component.less'
+  templateUrl: './string-expression.component.html',
+  styleUrl: './string-expression.component.less'
 })
-export class StringValueComponent extends ExpressionComponent {
+export class StringExpressionComponent extends BaseExpressionComponent {
   @Input() stringValue!: string;
 
   public isPunctuationPhrase() {

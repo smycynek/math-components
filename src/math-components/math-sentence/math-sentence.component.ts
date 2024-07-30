@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { MathContainerComponent } from '../math-container/math-container.component';
+import { MathExpressionComponent } from '../math-expression/math-expression.component';
 import { CommonModule } from '@angular/common';
 import { ExpressionData } from '../expression-data/expressionData';
 
 @Component({
-  selector: 'math-sentence',
+  selector: 'app-math-sentence',
   standalone: true,
-  imports: [CommonModule, MathContainerComponent],
+  imports: [CommonModule, MathExpressionComponent],
   templateUrl: './math-sentence.component.html',
   styleUrl: './math-sentence.component.less'
 })

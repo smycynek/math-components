@@ -8,13 +8,13 @@ To create a new operation type:
 
 1) Create a subclass of `ExpressionData` in `expressionData.ts`
 
-2) Create a corresponding angular component similar to `addition-operation` in the `expression-components` dir.
+2) Create a corresponding angular component similar to `addition-expression` in the `expression-components` dir.
 
-3) Update the `getMathComponent()` method to map this data class to the component in `math-container-component.ts`
+3) Update the `getMathComponent()` method to map this data class to the component in `math-expression-component.ts`
 
 4) Create a method to return some sample data from your new `ExpressionData` derived class, and pass that data to
-`math-exp`, e.g.
- `<math-exp [mathData]="your data here" />`
+`app-math-expression`, e.g.
+ `<app-math-expression [mathData]="your data here" />`
 
 # Questions/TODO
 

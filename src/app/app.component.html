@@ -58,20 +58,20 @@
         roots addition, subtraction, multiplication, division, exponents). Here's a root expression:
     </p>
     <p>
-        <math-exp [mathData]="getSampleRoot()"></math-exp>
+        <app-math-expression [mathData]="getSampleRoot()"/>
     </p>
     <p>
         We can also optionally show the value the expression is equal to (calculated automatically). For example, we can
         render:
     </p>
-    <p><math-exp [mathData]="getSampleRootWithValue()"></math-exp>
+    <p><app-math-expression [mathData]="getSampleRootWithValue()"/>
     </p>
 
     <p> We can also optionally override the equality operator and displayed r-value.
 
     </p>
     <div>
-        <math-exp [mathData]="getSampleRootWithOverriddenValue()" />
+        <app-math-expression [mathData]="getSampleRootWithOverriddenValue()" />
     </div>
 
 
@@ -82,7 +82,7 @@
             <summary>Roots</summary>
 
             <div *ngFor="let rdata of getRootData(); index as i">
-                <math-exp [mathData]="rdata" />
+                <app-math-expression [mathData]="rdata" />
             </div>
 
         </details>
@@ -92,7 +92,7 @@
             <summary>Whole numbers, fractions, and mixed numbers</summary>
 
             <div *ngFor="let rdata of getMixedNumData(); index as i">
-                <math-exp [mathData]="rdata" />
+                <app-math-expression [mathData]="rdata" />
             </div>
 
         </details>
@@ -102,19 +102,19 @@
             <summary>Addition, subtraction, multiplication, and division</summary>
 
             <div *ngFor="let rdata of getAddData(); index as i">
-                <math-exp [mathData]="rdata" />
+                <app-math-expression [mathData]="rdata" />
             </div>
 
             <div *ngFor="let rdata of getSubData(); index as i">
-                <math-exp [mathData]="rdata" />
+                <app-math-expression [mathData]="rdata" />
             </div>
 
             <div *ngFor="let rdata of getMultData(); index as i">
-                <math-exp [mathData]="rdata" />
+                <app-math-expression [mathData]="rdata" />
             </div>
 
             <div *ngFor="let rdata of getDivData(); index as i">
-                <math-exp [mathData]="rdata" />
+                <app-math-expression [mathData]="rdata" />
             </div>
 
         </details>
@@ -123,7 +123,7 @@
             <summary>Exponents</summary>
 
             <div *ngFor="let rdata of getExpData(); index as i">
-                <math-exp [mathData]="rdata" />
+                <app-math-expression [mathData]="rdata" />
             </div>
 
         </details>
@@ -132,7 +132,7 @@
             <summary>Logs</summary>
 
             <div *ngFor="let rdata of getLogData(); index as i">
-                <math-exp [mathData]="rdata" />
+                <app-math-expression [mathData]="rdata" />
             </div>
 
         </details>
@@ -145,13 +145,13 @@
             <p>Generic container with expression data declared explicitly rather than from a helper
                 <code>ExpressionData</code> object:
 
-                <math-exp
-                    [mathData]="{opType: 'RootOpDataName', coefficient: 4, index: 3, radicand: 8, value: 8, showRval: true, displayOp: '&ne;', displayRval:99}" />
+                <app-math-expression
+                    [mathData]="{opType: 'RootExpressionName', coefficient: 4, index: 3, radicand: 8, value: 8, showRval: true, displayOp: '&ne;', displayRval:99}" />
             </p>
-            <p>Root component declared explicitly using an <code>app-mroot</code> component:
-                <app-mroot coefficient="4" index="3" radicand="8" value="8" [showRval]=true displayOp="&ne;"
+            <p>Root component declared explicitly using an <code>app-root-expression</code> component:
+                <app-root-expression coefficient="4" index="3" radicand="8" value="8" [showRval]=true displayOp="&ne;"
                     [displayRval]="99">
-                </app-mroot>
+                </app-root-expression>
             </p>
         </div>
     </details>
@@ -159,17 +159,17 @@
 
     <details>
         <summary>Compound Sentence from data array (most complex use case)</summary>
-        <math-sentence [dataArray]="compoundSentence1" />
-        <math-sentence [dataArray]="compoundSentence2" />
-        <math-sentence [dataArray]="compoundSentence3" />
-        <math-sentence [dataArray]="compoundSentence4" />
-        <math-sentence [dataArray]="compoundSentence5" />
-        <math-sentence [dataArray]="compoundSentence6" />
-        <math-sentence [dataArray]="compoundSentence7" />
-        <math-sentence class="correct" [dataArray]="compoundSentence8" />
-        <math-sentence [dataArray]="compoundSentence9" />
-        <math-sentence [dataArray]="compoundSentence10" />
-        <math-sentence class="incorrect" [dataArray]="compoundSentence11" />
+        <app-math-sentence [dataArray]="compoundSentence1" />
+        <app-math-sentence [dataArray]="compoundSentence2" />
+        <app-math-sentence [dataArray]="compoundSentence3" />
+        <app-math-sentence [dataArray]="compoundSentence4" />
+        <app-math-sentence [dataArray]="compoundSentence5" />
+        <app-math-sentence [dataArray]="compoundSentence6" />
+        <app-math-sentence [dataArray]="compoundSentence7" />
+        <app-math-sentence class="correct" [dataArray]="compoundSentence8" />
+        <app-math-sentence [dataArray]="compoundSentence9" />
+        <app-math-sentence [dataArray]="compoundSentence10" />
+        <app-math-sentence class="incorrect" [dataArray]="compoundSentence11" />
     </details>
 
     <details>
@@ -177,7 +177,7 @@
         <div class="container">
             <div class="row" *ngFor="let c of indices(); let ci=index">
                 <div class="col cell" *ngFor="let r of indices(); let ri=index">
-                    <math-exp [mathData]="getVariousDataRow()[ci*4+ri]" />
+                    <app-math-expression [mathData]="getVariousDataRow()[ci*4+ri]" />
                 </div>
             </div>
         </div>

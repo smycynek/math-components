@@ -2,5 +2,5 @@
 rm -rf dist
 
 
-ng build  --configuration=production
+npx ng build  --configuration=production
 
