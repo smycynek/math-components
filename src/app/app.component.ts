@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { ExpressionComponent } from '../expression-components/expression/expression.component';
-import { MixedNumberComponent } from '../expression-components/mixed-number/mixed-number.component';
-import { RootComponent } from '../expression-components/root/root.component';
-import { MathContainerComponent } from '../math-container/math-container.component';
-import { RootData, MixedNumData, MultOpData, DivOpData, AddOpData, SubOpData, ExpOpData, s, LogExpData, ExpressionData } from '../expression-data/expressionData';
-import { OP_GT, OP_LT, OP_NE } from '../expression-data/operators';
-import { MathSentenceComponent } from '../math-sentence/math-sentence.component';
+
 import { CommonModule } from '@angular/common';
+import { ExpressionComponent } from '../math-components/expression-components/expression/expression.component';
+import { MixedNumberComponent } from '../math-components/expression-components/mixed-number/mixed-number.component';
+import { RootComponent } from '../math-components/expression-components/root/root.component';
+import { MixedNumData, RootData, ExpOpData, AddOpData, SubOpData, MultOpData, DivOpData, LogExpData, ExpressionData, s } from '../math-components/expression-data/expressionData';
+import { OP_NE, OP_LT, OP_GT } from '../math-components/expression-data/operators';
+import { MathContainerComponent } from '../math-components/math-container/math-container.component';
+import { MathSentenceComponent } from '../math-components/math-sentence/math-sentence.component';
 
 @Component({
   selector: 'app-root',
